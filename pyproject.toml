@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "todorot"
+version = "0.1.0"
+description = "Find TODO/FIXME comments and see how long they have been rotting, using git blame. Fail CI on stale TODOs."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "WTFPL" }
+authors = [{ name = "SunoriOff" }]
+keywords = ["todo", "fixme", "git-blame", "technical-debt", "cli", "ci", "devtools"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+todorot = "todorot.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SunoriOff/todorot"
+Issues = "https://github.com/SunoriOff/todorot/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,7 @@
+- id: todorot
+  name: todorot
+  description: Fail when TODO/FIXME comments get too old.
+  entry: todorot --max-age 365
+  language: python
+  pass_filenames: false
+  always_run: true
